@@ -129,6 +129,18 @@
   overflow: scroll;
   position: relative;
 }
+.sidebar__chat--addRoom {
+  position :absolute;
+  bottom:10px;
+  right: 5px;
+  background-color: greenyellow;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
 
 .side {
   transform: scale(1) !important;

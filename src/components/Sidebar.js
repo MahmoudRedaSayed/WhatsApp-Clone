@@ -2,8 +2,10 @@ import React from "react";
 import "./Sidebar.css";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
-import { ExitToApp } from "@material-ui/icons";
+import { ExitToApp,Add ,SearchOutlined} from "@material-ui/icons";
 import { auth } from "../firebase";
+// import SearchOutlined from "@material-ui";
+
 
 export default function Sidebar({user,page}) {
   const signOut=()=>{
@@ -21,5 +23,21 @@ export default function Sidebar({user,page}) {
       </IconButton>
     </div>
     </div>
+    <div className="sidebar__search">
+      <form className="sidebar__search--container">
+        <SearchOutlined></SearchOutlined>
+        <input
+        placeholder="search for user or chat"
+        type="text"
+        id="search"
+        >
+        </input>
+      </form>
+    </div>
+      <div className="sidebar__chat--addRoom">
+        <IconButton>
+          <Add></Add>
+        </IconButton>
+      </div>
   </div>;
 }
