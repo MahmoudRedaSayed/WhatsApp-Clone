@@ -103,30 +103,30 @@ export default function Sidebar({user,page}) {
         </Nav>
       </div>
       
-      {/* {page.isMobile ? (
+      {page.isMobile ? (
         <Switch>
           <Route path="/chats">
-            <SidebarList title="Chats" data={chats} />
+            <SidebarList title="Chats"  data={[]} />
           </Route>
           <Route path="/rooms">
             <SidebarList title="Rooms" data={rooms} />
           </Route>
           <Route path="/users">
-            <SidebarList title="Users" data={users} />
+            <SidebarList title="Users"  data={[]} />
           </Route>
           <Route path="/search">
-            <SidebarList title="Search Results" data={searchResults} />
+            <SidebarList title="Search Results"  data={[]} />
           </Route>
         </Switch>
       ) : menu === 1 ? (
-        <SidebarList title="Chats" data={chats} />
+        <SidebarList title="Chats"  data={[]} />
       ) : menu === 2 ? (
         <SidebarList title="Rooms" data={rooms} />
       ) : menu === 3 ? (
-        <SidebarList title="Users" data={users} />
+        <SidebarList title="Users" data={[]}/>
       ) : menu === 4 ? (
         <SidebarList title="Search Results" data={searchResults} />
-      ) : null} */}
+      ) : null}
 
       <div className="sidebar__chat--addRoom">
         <IconButton onClick={createRoom}>
