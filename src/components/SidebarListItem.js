@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function SidebarListItem({item}) {
   return (
-    <Link className="link" to={`/room/${item.id}`}>
+    <Link className="link" to={`/rooms/${item.id}`}>
       <div className="sidebar__chat">
         <div className="avatar__container">
           <Avatar
