@@ -13,12 +13,20 @@ import {
 import { auth,db,createTimeStamp } from "../firebase";
 import SidebarList from "./SidebarList";
 import { NavLink, Switch, Route } from "react-router-dom";
+import useRooms from "../hooks/useRooms";
+import useUsers from "../hooks/useUsers";
+import { useScrollTrigger } from "@material-ui/core";
+import useChats from "../hooks/useChats";
 
 
 
 
 export default function Sidebar({user,page}) {
   const [menu, setMenu] = React.useState(1);
+  const rooms=useRooms();
+  const users=useUsers(user);
+  const chats=useChats(user);
+
   const signOut=()=>{
     auth.signOut();
   }
@@ -106,26 +114,26 @@ export default function Sidebar({user,page}) {
       {page.isMobile ? (
         <Switch>
           <Route path="/chats">
-            <SidebarList title="Chats"  data={[]} />
+            <SidebarList title="Chats"  data={chats} />
           </Route>
           <Route path="/rooms">
             <SidebarList title="Rooms" data={rooms} />
           </Route>
           <Route path="/users">
-            <SidebarList title="Users"  data={[]} />
+            <SidebarList title="Users"  data={users} />
           </Route>
           <Route path="/search">
             <SidebarList title="Search Results"  data={[]} />
           </Route>
         </Switch>
       ) : menu === 1 ? (
-        <SidebarList title="Chats"  data={[]} />
+        <SidebarList title="Chats"  data={chats} />
       ) : menu === 2 ? (
         <SidebarList title="Rooms" data={rooms} />
       ) : menu === 3 ? (
-        <SidebarList title="Users" data={[]}/>
+        <SidebarList title="Users" data={users}/>
       ) : menu === 4 ? (
-        <SidebarList title="Search Results" data={searchResults} />
+        <SidebarList title="Search Results" data={[]} />
       ) : null}
 
       <div className="sidebar__chat--addRoom">
