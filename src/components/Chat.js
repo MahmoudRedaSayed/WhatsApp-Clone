@@ -29,6 +29,7 @@ export default function Chat({ user, page }) {
   const { roomId } = useParams();
   const history = useHistory();
   const messages = useChatMessages(roomId);
+  console.log(messages);
   const room = useRoom(roomId, user.uid);
 
   function onChange(event) {
@@ -87,7 +88,7 @@ export default function Chat({ user, page }) {
             setImage(null);
             await storage.child(imageName).put(result);
             const url = await storage.child(imageName).getDownloadURL();
-            db.collection("rooms")
+            await db.collection("rooms")
               .doc(roomId)
               .collection("messages")
               .doc(doc.id)
