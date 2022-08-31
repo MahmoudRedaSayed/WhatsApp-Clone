@@ -15,7 +15,6 @@ import SidebarList from "./SidebarList";
 import { NavLink, Switch, Route } from "react-router-dom";
 import useRooms from "../hooks/useRooms";
 import useUsers from "../hooks/useUsers";
-import { useScrollTrigger } from "@material-ui/core";
 import useChats from "../hooks/useChats";
 
 

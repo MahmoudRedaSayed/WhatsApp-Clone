@@ -3,7 +3,6 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
 import "firebase/database";
-import { getAuth } from "firebase/auth";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
